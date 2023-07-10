@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.min.js"></script>
+  <script src="script.js"></script>
+  <script src="chatbot.js" type="module"></script>
+  <title>Trainable GUI Chatbot</title>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:regular,bold&display=swap">
+
+  <style>
+    body {
+      background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(44,128,168,1) 0%, rgba(35,78,185,1) 17%, rgba(0,163,196,1) 100%);
+      color: white;
+      font-family:'Poppins SemiBold 600';
+      margin: 0;
+      padding: 0;
+    }
+
+    #chat-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    #chat-frame {
+      height: 580px;
+      width: 480px;
+      background-color:transparent;
+      border: 3px solid rgb(210, 1, 1);
+      border-top-right-radius: 60px;
+      border-bottom-left-radius: 60px;
+      padding: 20px;
+      box-sizing: inherit;
+    }
+
+    #chat-history {
+      width: 98%;
+      height: 90%;
+      background-color:transparent;
+      color: #ffffff;
+      font-weight: bold;
+      font-size: large;
+      font-family: 'Poppins';
+      resize: none;
+      border: 2px solid rgb(255, 255, 255);
+      border-radius: 10px;
+      overflow-y: scroll;
+      text-align: center;
+    }
+
+   
+    #user-query {
+      background-color: #ffffff;
+      color: #0C8DD1;
+      padding: 10px;
+      border:  3px solid rgb(255, 0, 0);
+      border-radius: 10px;
+      margin-right: 10px;
+      align-self: flex-end;
+    }
+
+    #response {
+      background-color: white;
+      color: black;
+      padding: 10px;
+      border-radius: 10px 10px 0 10px;
+      margin-left: 10px;
+      align-self: flex-start;
+    }
+
+    #input-frame {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
+  
+    #entry {
+      font-family: 'Poppins';
+      font-weight: bold;
+      flex-grow: 1;
+      height: 10%;
+      width: 70%;
+      background-color: white;
+      color: #00539b;
+      border: none;
+      padding: 5px;
+      border-radius: 10px;
+    }
+
+    #button {
+      font-family: 'Poppins';
+      background-color: white;
+      color: #0C8DD1;
+      font-weight: bolder;
+      border: none;
+      border-radius: 10px;
+      padding: 5px 10px;
+      margin-left: 10px;
+    }  
+
+    .label2{
+      font-family: 'poppins';
+      font-weight: bold;
+    }
+    
+  </style>
+</head>
+<body>
+  <div id="chat-container">
+    <h1 class="label2">Nyola shoka wa hala okupula</h1>
+    <div id="chat-frame">
+      <textarea id="chat-history"></textarea>
+      <div id="input-frame">
+        <input id="entry" type="text" />
+        <button id="button">Tuma</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+
+  const alternativeResponses = [
+    "Ombili, ashike katuna eyamukulo lyepulo ndika manga.",
+            "Nyolulula epulo lyoye natango momukalo gwa yooloka.",
+            "Epulo lyoye kandi li uvite nawa.",
+            "Uuyele mboka kandi wuna natango, ashike otandi vulu ndiku kwathele palwe.",
+            "Gandja uuyele wagwana opo tu ku pe eyamukulo lyomondjila.",
+  ];
+
+  for (const query in dataset) {
+    const formattedQuery = query.trim().toLowerCase();
+
+    if (formattedQuery === user_query) {
+      return dataset[query];
+    }
+  }
+
+  return alternativeResponses[Math.floor(Math.random() * alternativeResponses.length)];
+}
+
+// Dataset containing user queries and responses
+let dataset = {};
+
+// Load dataset from a JSON file
+function loadDataset() {
+  fetch("dataset.json")
+    .then(response => response.json())
+    .then(data => {
+      dataset = data;
+      console.log("Dataset loaded successfully:", dataset);
+    })
+    .catch(error => {
+      console.error("Failed to load dataset:", error);
+    });
+}
+
+// Save dataset to a JSON file
+function saveDataset(file_path) {
+  const json = JSON.stringify(dataset);
+  // Code to save the dataset to a JSON file at the specified file path
+}
+
+// Train the chatbot by adding a user query and response to the dataset
+function trainChatbot(user_query, response) {
+  dataset[user_query] = response;
+}
+
+// Generate a response based on user query
+
+
+// Generate a response based on user query
+// Generate a response based on user query
+function generateResponse(user_query) {
+  user_query = user_query.trim(); // Trim whitespace
+
+  // Remove punctuation and extra whitespace from user query
+  user_query = user_query.replace(/[^\w\s]/g, '').replace(/\s+/g, ' ');
+
+  // Convert user query to lowercase
+  user_query = user_query.toLowerCase();
+
+  const keyword = ["aweh, e-voucher "]; // Define the keyword to be recognized
+
+  // Check if the user query contains the keyword
+  if (user_query.includes(keyword)) {
+    return dataset[keyword]; // Return the response associated with the keyword
+  } else {
+    // Perform a simple spelling correction or suggest an alternative query
+    const alternativeQuery = user_query.replace("cr", keyword);
+    const suggestion = `Did you mean "${alternativeQuery}"?`;
+
+    return suggestion;
+  }
+}
+
+// Function to handle button click event
+function submitQuery() {
+  const user_query = entry.value;
+  const response = generateResponse(user_query);
+
+  // Display user query and response in the chat history
+  chat_history.innerHTML += "User: " + user_query + "\n";
+  chat_history.innerHTML += "Chatbot: " + response + "\n\n";
+
+  // Clear the input field
+  entry.value = "";
+}

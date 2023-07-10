@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.min.js"></script>
+  <script src="script.js"></script>
+  <title>Image Slider with Buttons</title>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:regular,bold&display=swap">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fasthand&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(44,128,168,1) 0%, rgba(35,78,185,1) 17%, rgba(0,163,196,1) 100%);
+      color: white;
+      font-family:'Poppins SemiBold 600';
+      margin: 0;
+      padding: 0;
+      background-image: url("./node_modules/ai\ red.jpg");
+      background-size: cover;
+      background-position: center;
+      opacity: 0.3;
+    }
+
+    .slider-container {
+      border: 1px solid #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+
+    .slider {
+      width: 600px;
+      height: 400px;
+      overflow: hidden;
+      border-radius: 10px;
+      position: relative;
+      margin-top: 20px;
+    }
+
+    .slider-inner {
+      display: flex;
+      transition: transform 2s ease-in-out;
+      animation: slide 30s infinite;
+    }
+
+    .slider-inner:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes slide {
+      0% {
+        transform: translateX(0);
+      }
+      20% {
+        transform: translateX(-100%);
+      }
+      40% {
+        transform: translateX(-200%);
+      }
+      60% {
+        transform: translateX(-300%);
+      }
+      80% {
+        transform: translateX(-400%);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+    .slider-item {
+      flex: 0 0 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .slider-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      bottom: 70px;
+    }
+
+    .buttons-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-top: 20px;
+      position: absolute;
+      bottom: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+    }
+
+    .button {
+      background-color: white;
+      color: #0C8DD1;
+      font-family: 'Poppins';
+      font-weight: bold;
+      border: 3px solid rgb(204, 0, 0);
+      border-radius: 30px;
+      padding: 10px 30px;
+      text-align: center;
+      font-size: 18px;
+    }
+
+    .label {
+      font-family: 'Fasthand', cursive;
+      font-size: 24px;
+      margin-bottom: 0px;  
+      display: inline-block;
+      margin-right: 10px;
+      margin-top: 1px;
+    }
+
+    .label2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+
+  </style>
+  
+</head>
+<body>
+  <div class="slider-container">
+    <h1 class="label">AMA</h1><h1 class="label2">Chatbot</h1>
+    <div class="slider">
+      <div class="slider-inner">
+        <div class="slider-item">
+          <img class="slider-image" src="./node_modules/education.jpg" alt="Image 1">
+        </div>
+        <div class="slider-item">
+          <img class="slider-image" src="./node_modules/train.jpg" alt="Image 2">
+        </div>
+        <div class="slider-item">
+          <img class="slider-image" src="./node_modules/Health.jpg" alt="Image 3">
+        </div>
+        <div class="slider-item">
+          <img class="slider-image" src="./node_modules/swakopmund.jpg" alt="Image 4">
+        </div>
+        <div class="slider-item">
+          <img class="slider-image" src="./node_modules/mboma.jpg" alt="Image 5">
+        </div>
+      </div>
+    </div>
+    <div class="buttons-grid">
+      <button class="button">OTJIHERERO</button>
+      <button class="button">OSHIWAMBO</button>
+      <button class="button">KHOEKHOEGOWAB</button>
+      <button class="button">RUKWANGALI</button>
+      <button class="button">SILOZI</button>
+      <button class="button">SETSWANA</button>
+    </div>
+  </div>
+</body>
+</html>
