@@ -17,10 +17,9 @@
       font-family:'Poppins SemiBold 600';
       margin: 0;
       padding: 0;
-      background-image: url("./node_modules/ai\ red.jpg");
       background-size: cover;
       background-position: center;
-      opacity: 0.3;
+      opacity: 1;
     }
 
     .slider-container {
@@ -30,10 +29,11 @@
       justify-content: center;
       height: 100vh;
       flex-direction: column;
+      margin-bottom: 0%;
     }
 
     .slider {
-      width: 600px;
+      width: 720px;
       height: 400px;
       overflow: hidden;
       border-radius: 10px;
@@ -100,19 +100,20 @@
     }
 
     .button {
-      background-color: white;
-      color: #0C8DD1;
+      background-color: rgb(176, 9, 9);
+      color: #ffffff;
       font-family: 'Poppins';
-      font-weight: bold;
-      border: 3px solid rgb(204, 0, 0);
+      font-weight: bolder;
+      border: 1px solid rgb(255, 255, 255);
       border-radius: 30px;
-      padding: 10px 30px;
+      padding: 20px 30px;
       text-align: center;
       font-size: 18px;
     }
 
     .label {
-      font-family: 'Fasthand', cursive;
+      font-family: 'Poppins';
+      font-weight: bold;
       font-size: 24px;
       margin-bottom: 0px;  
       display: inline-block;
@@ -124,6 +125,7 @@
       font-size: 24px;
       margin-bottom: 20px;
       display: inline-block;
+      font-family: 'Audiowide', cursive; ;
     }
 
   </style>
@@ -135,7 +137,7 @@
     <div class="slider">
       <div class="slider-inner">
         <div class="slider-item">
-          <img class="slider-image" src="./node_modules/education.jpg" alt="Image 1">
+          <img class="slider-image" src="./node_modules/Nam Ai.jpg" alt="Image 1">
         </div>
         <div class="slider-item">
           <img class="slider-image" src="./node_modules/train.jpg" alt="Image 2">
@@ -144,16 +146,16 @@
           <img class="slider-image" src="./node_modules/Health.jpg" alt="Image 3">
         </div>
         <div class="slider-item">
-          <img class="slider-image" src="./node_modules/swakopmund.jpg" alt="Image 4">
+          <img class="slider-image" src="./node_modules/education.jpg" alt="Image 4">
         </div>
         <div class="slider-item">
-          <img class="slider-image" src="./node_modules/mboma.jpg" alt="Image 5">
+          <img class="slider-image" src="./node_modules/sea.jpg" alt="Image 5">
         </div>
       </div>
     </div>
     <div class="buttons-grid">
       <button class="button">OTJIHERERO</button>
-      <button class="button">OSHIWAMBO</button>
+      <a href="index.html" class="button">OSHIWAMBO</a>
       <button class="button">KHOEKHOEGOWAB</button>
       <button class="button">RUKWANGALI</button>
       <button class="button">SILOZI</button>
